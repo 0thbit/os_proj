@@ -29,19 +29,19 @@ typedef struct tagMyList {
 	MyListElem *(*Find)(struct tagMyList *, void *obj);
 } MyList;
 
-extern int MyListLength ARGS_DECL((MyList*));
-extern int MyListEmpty ARGS_DECL((MyList*));
-extern int MyListAppend ARGS_DECL((MyList*, void*));
-extern int MyListPrepend ARGS_DECL((MyList*, void*));
-extern void MyListUnlink ARGS_DECL((MyList*, MyListElem*));
-extern void MyListUnlinkAll ARGS_DECL((MyList*));
-extern int MyListInsertAfter ARGS_DECL((MyList*, void*, MyListElem*));
-extern int MyListInsertBefore ARGS_DECL((MyList*, void*, MyListElem*));
-extern MyListElem MyListFirst ARGS_DECL((MyList*));
-extern MyListElem *MyListLast ARGS_DECL((MyList*));
-extern MyListElem *MyListNext ARGS_DECL((MyList*, MyListElem*));
-extern MyListElem *MyListPrev ARGS_DECL((MyList*, MyListElem*));
-extern MyListElem *MyListFind ARGS_DECL((MyList*, void*));
-extern int MyListInit ARGS_DECL((MyList*));
+extern int MyListLength(MyList*);
+extern int MyListEmpty(MyList*);
+extern int MyListAppend(MyList*, void*);
+extern int MyListPrepend(MyList*, void*);
+extern void MyListUnlink(MyList*, MyListElem*);
+extern void MyListUnlinkAll(MyList*);
+extern int MyListInsertAfter(MyList*, void*, MyListElem*);
+extern int MyListInsertBefore(MyList*, void*, MyListElem*);
+extern MyListElem MyListFirst(MyList*);
+extern MyListElem *MyListLast(MyList*);
+extern MyListElem *MyListNext(MyList*, MyListElem*);
+extern MyListElem *MyListPrev(MyList*, MyListElem*);
+extern MyListElem *MyListFind(MyList*, void*);
+extern int MyListInit(MyList*);
 
 #endif /*_MYLIST_H_*/
