@@ -1,6 +1,8 @@
 #ifndef _MYLIST_H_
 #define _MYLIST_H_
 
+#include "cs402.h"
+
 typedef struct tagMyListElem {
 	void *obj;
 	struct tagMyListElem *next;
