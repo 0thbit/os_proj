@@ -17,12 +17,17 @@ int MyListEmpty(MyList* list){
     return (list->num_members == 0);
 }
 
-void MyListUnlinkAll(MyList* list){
-    if (MyListEmpty(list)){
-        return;
-    }
-    MyListElem cur =
+MyListElem *MyListFirst(MyList* list){
+	MyList*  current = list;
+
+	while(current->obj != NULL){
+		current = current->next;
+	}
+
+	return current->next;
+
 }
+
 
 MyListElem *MyListNext(MyList* list, MyListElem* node){
 	MyList*  current = list;
@@ -59,16 +64,7 @@ MyListElem *MyListFind(MyList* list, void * data){
 }
 
 
-MyListElem *MyListFirst(MyList* list){
-	MyList*  current = list;
 
-	while(current->obj != NULL){
-		current = current->next;
-	}
-
-	return current->next;
-
-}
 
 MyListElem *MyListLast(MyList* list){
 	MyList*  current = list;
@@ -135,6 +131,22 @@ void MyListUnlink(MyList* list, MyListElem* node){
 	current->prev = NULL;
 }
 
+
+void MyListUnlinkAll(MyList* list){
+    int ret;
+    if (MyListEmpty(list)){
+        return;
+    }
+    MyListElem *cur = MyListFirst(list);
+
+    while(cur){
+        MyListElem *del = cur;
+        MyListUnlink(list, del);
+        cur = MyListNext(list,cur);
+    }
+
+    ret = MyListInit(list);
+}
 
 int MyListInsertAfter(MyList * list, void * data , MyListElem * node){
 	MyList * current = list;
