@@ -37,7 +37,7 @@ extern void MyListUnlink(MyList*, MyListElem*);
 extern void MyListUnlinkAll(MyList*);
 extern int MyListInsertAfter(MyList*, void*, MyListElem*);
 extern int MyListInsertBefore(MyList*, void*, MyListElem*);
-extern MyListElem MyListFirst(MyList*);
+extern MyListElem *MyListFirst(MyList*);
 extern MyListElem *MyListLast(MyList*);
 extern MyListElem *MyListNext(MyList*, MyListElem*);
 extern MyListElem *MyListPrev(MyList*, MyListElem*);
